@@ -12,8 +12,95 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
     <style>
+      :root {
+        --primary-color: #4a90e2;
+        --secondary-color: #6c5ce7;
+        --accent-color: #ff9f43;
+        --text-dark: #2d3436;
+        --text-light: #636e72;
+        --light-bg: #f8f9fa;
+        --white: #ffffff;
+      }
+      /* Header Styles */
+      header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: var(--white);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-color) !important;
+      }
+
+      .nav-link:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: var(--primary-color);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: width 0.3s;
+      }
+
+      .nav-link:hover:after {
+        width: 70%;
+      }
+
+      .dropdown-menu {
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border: none;
+        margin-top: 10px;
+      }
+
+      .dropdown-item {
+        padding: 10px 20px;
+        transition: all 0.2s ease;
+      }
+
+      .dropdown-item:hover {
+        background-color: var(--light-bg);
+        color: var(--primary-color);
+      }
+
+      .search-box {
+        border-radius: 20px;
+        border: 1px solid #e0e0e0;
+        padding-left: 15px;
+        transition: all 0.3s ease;
+      }
+
+      .search-box:focus {
+        box-shadow: 0 0 0 0.25rem rgba(74, 144, 226, 0.25);
+        border-color: var(--primary-color);
+      }
+
+      .paw-logo {
+          width: 40px;
+          height: 40px;
+          margin-right: 10px;
+      }
+
       body {
+        font-family: 'Poppins', sans-serif;
+        color: var(--text-dark);
+        overflow-x: hidden;
         width: 100%;
         height: fit-content;
         margin: 0;
@@ -155,11 +242,59 @@
           width: 100vw;
         }
       }
+
+      ::selection {
+        background-color: #ea7d7d; /* Light red background */
+        color: #fff; /* Black text */
+      }
     </style>
   </head>
   <body>
+    <!-- Header -->
+    <header class="py-3 mb-4">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <a href="another-index.html" class="d-flex align-items-center text-decoration-none me-4">
+              <img src="./images/file.png" alt="Paw Logo" class="paw-logo">
+              <span class="fs-4 fw-bold text-dark">PawPeace</span>
+            </a>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0">
+              <li><a href="./another-index.html" class="nav-link px-3 link-dark active">Home</a></li>
+              <li><a href="./random.html" class="nav-link px-3 link-dark">Rent-a-pet</a></li>
+              <li><a href="#" class="nav-link px-3 link-dark">Past rentals</a></li>
+              <li><a href="#" class="nav-link px-3 link-dark">Book a visit</a></li>
+              <li><a href="#contact" class="nav-link px-3 link-dark">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="d-flex align-items-center">
+            <form class="me-3" role="search">
+              <input type="search" class="form-control search-box" placeholder="Search pets..." aria-label="Search">
+            </form>
+
+            <div class="dropdown">
+              <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://api.dicebear.com/6.x/avataaars/svg?seed=Felix" alt="User Avatar" width="32" height="32" class="rounded-circle me-2">
+                <span class="d-none d-sm-inline">My Account</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle me-2"></i>Profile</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-heart me-2"></i>Favorites</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-history me-2"></i>Rental History</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i>Sign out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
     <div class="center">
-      <div class="top"><div class="heading">Rent-a-Pet</div></div>
+      <div class="top"><div class="heading">Renting Guide</div></div>
       <div class="stack-area">
         <div class="left">
           <div class="title">Our Pets</div>

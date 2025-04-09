@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawPeace - Rent Your Perfect Pet Companion</title>
+    <link rel="icon" href="./images/file.png" type="image/icon type">
+    <link rel="stylesheet" href="./another-snake.css">
+    <link rel="icon" href="./images/file.png" type="image/icon type">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="./images/file.png" alt="Paw Logo" class="paw-logo">
+            <a href="another-index.html" class="logo-text">PawPeace</a>
+        </div>
+        <div class="nav-links">
+            <a href="another-index.html" class="nav-link" >Home</a>
+            <a href="another-random.html" class="active nav-link">Rent-a-pet</a>
+            <a href="past-rentals.html"  class="nav-link" >Past rentals</a>
+            <a href="book-visit.html" class="nav-link" >Book a visit</a>
+        </div>
+        <div class="search-account">
+            <div class="search-container">
+                <input type="text" id="petSearch" placeholder="Search pets..." class="search-input">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="account-dropdown">
+                <button class="account-btn">
+                    <img src="./images/profile.png" alt="Profile" class="profile-img">
+                    <span>My Account</span>
+                    <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="profile.html">Profile</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="favorites.html">Favorites</a>
+                    <a href="logout.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pet-gallery">
+        <h2 class="category-title">Reptiles & Turtles</h2>
+        
+        <div class="pet-row">
+            <div class="container">
+                <div class="wrapper">
+                    <div class="banner-image-1"></div>
+                    <h2>Scales the Snake</h2>
+                    <p>Ssssss!</p>
+                </div>
+                <div class="button-wrapper"> 
+                    <a href="./another-random.html"><button class="btn outline">DETAILS</button></a>
+                    <a href="./form.html"><button class="btn fill">RENT NOW</button></a>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="wrapper">
+                    <div class="banner-image-2"></div>
+                    <h2>Chammy the Chameleon</h2>
+                    <p>(Invisible!)</p>
+                </div>
+                <div class="button-wrapper"> 
+                    <a href="./another-random.html"><button class="btn outline">DETAILS</button></a>
+                    <a href="./form.html"><button class="btn fill">RENT NOW</button></a>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="wrapper">
+                    <div class="banner-image-3"></div>
+                    <h2>Shelly the Turtle</h2>
+                    <p>Clickety-clack</p>
+                </div>
+                <div class="button-wrapper"> 
+                    <a href="./another-random.html"><button class="btn outline">DETAILS</button></a>
+                    <a href="./form.html"><button class="btn fill">RENT NOW</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pet-row">
+            <div class="container">
+                <div class="wrapper">
+                    <div class="banner-image-4"></div>
+                    <h2>Iggy the Iguana</h2>
+                    <p>Sunbathing expert</p>
+                </div>
+                <div class="button-wrapper"> 
+                    <a href="./another-random.html"><button class="btn outline">DETAILS</button></a>
+                    <a href="./form.html"><button class="btn fill">RENT NOW</button></a>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="wrapper">
+                    <div class="banner-image-5"></div>
+                    <h2>Gex the Gecko</h2>
+                    <p>Wall-climbing pro</p>
+                </div>
+                <div class="button-wrapper"> 
+                    <a href="./another-random.html"><button class="btn outline">DETAILS</button></a>
+                    <a href="./form.html"><button class="btn fill">RENT NOW</button></a>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="wrapper">
+                    <div class="banner-image-6"></div>
+                    <h2>Drago the Bearded Dragon</h2>
+                </div>
+                <div class="button-wrapper"> 
+                    <a href="./another-random.html"><button class="btn outline">DETAILS</button></a>
+                    <a href="./form.html"><button class="btn fill">RENT NOW</button></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Search functionality
+        document.getElementById('petSearch').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                const searchTerm = this.value.toLowerCase();
+                const petNames = [
+                    { name: 'scales', url: '#scales' },
+                    { name: 'chammy', url: '#chammy' },
+                    { name: 'shelly', url: '#shelly' },
+                    { name: 'iggy', url: '#iggy' },
+                    { name: 'gex', url: '#gex' },
+                    { name: 'drago', url: '#drago' }
+                ];
+                
+                const matchedPet = petNames.find(pet => pet.name.toLowerCase().includes(searchTerm));
+                if (matchedPet) {
+                    window.location.href = matchedPet.url;
+                } else {
+                    alert('Pet not found. Try another name!');
+                }
+            }
+        });
+
+        // Dropdown functionality
+        document.querySelector('.account-btn').addEventListener('click', function() {
+            document.querySelector('.dropdown-content').classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        window.addEventListener('click', function(event) {
+            if (!event.target.matches('.account-btn') && 
+                !event.target.matches('.profile-img') && 
+                !event.target.matches('.fa-caret-down')) {
+                const dropdowns = document.getElementsByClassName('dropdown-content');
+                for (let i = 0; i < dropdowns.length; i++) {
+                    if (dropdowns[i].classList.contains('show')) {
+                        dropdowns[i].classList.remove('show');
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
